@@ -9,18 +9,20 @@ export default function Contact() {
 
   return (
     <section className="py-20 lg:py-28 bg-[#1F2933] scroll-mt-20" id="contact">
+      {" "}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {" "}
         <div className="text-center">
-          {/* Main Heading */}
+          {" "}
+          {/* Main Heading */}{" "}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            გსურთ რემონტის დაწყება?
+            {" "}
+            გსურთ რემონტის დაწყება?{" "}
           </h2>
-
           {/* Subheading */}
           <p className="text-xl sm:text-2xl text-slate-300 mb-12 lg:mb-14">
-            დაგვიკავშირდით დღეს და მიიღეთ უფასო კონსულტაცია
+            დაგვიკავშირდით დღესვე და მიიღეთ უფასო კონსულტაცია თქვენს პროექტზე
           </p>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             {/* Phone Button */}
@@ -39,7 +41,7 @@ export default function Contact() {
               </div>
               <div className="text-left">
                 <div className="text-xs text-slate-500 font-normal mb-1">
-                  დარეკეთ ახლავე
+                  დაგვირეკეთ ახლავე
                 </div>
                 <div className="text-lg font-bold">{phoneNumber}</div>
               </div>
@@ -63,13 +65,12 @@ export default function Contact() {
               </div>
               <div className="text-left">
                 <div className="text-xs text-green-100 font-normal mb-1">
-                  დაწერეთ WhatsApp-ზე
+                  მოგვწერეთ WhatsApp-ზე
                 </div>
-                <div className="text-lg font-bold">მიიღეთ პასუხი 5 წუთში</div>
+                <div className="text-lg font-bold">სწრაფი პასუხი</div>
               </div>
             </Link>
           </div>
-
           {/* Trust Indicators */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-colors">
@@ -87,9 +88,9 @@ export default function Contact() {
                 </svg>
               </div>
               <div className="text-white font-bold text-lg mb-1">
-                სწრაფი პასუხი
+                სწრაფი რეაგირება
               </div>
-              <div className="text-slate-400 text-sm">24/7 ხელმისაწვდომი</div>
+              <div className="text-slate-400 text-sm">კონსულტაცია 24/7-ზე</div>
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-colors">
@@ -108,9 +109,9 @@ export default function Contact() {
                 </svg>
               </div>
               <div className="text-white font-bold text-lg mb-1">
-                უფასო შეფასება
+                უფასო ხარჯთაღრიცხვა
               </div>
-              <div className="text-slate-400 text-sm">ვადასა და ფასზე</div>
+              <div className="text-slate-400 text-sm">ზუსტი ფასი და ვადები</div>
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-colors">
@@ -128,12 +129,11 @@ export default function Contact() {
                 </svg>
               </div>
               <div className="text-white font-bold text-lg mb-1">
-                ხელშეკრულება
+                ოფიციალური გარანტია
               </div>
-              <div className="text-slate-400 text-sm">გარანტიით</div>
+              <div className="text-slate-400 text-sm">დაცული უფლებები</div>
             </div>
           </div>
-
           {/* Bottom Note */}
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex items-center justify-center gap-2 text-slate-300">
@@ -150,7 +150,7 @@ export default function Contact() {
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <span>მუშაობთ ყოველდღე 09:00-დან 21:00 საათამდე</span>
+              <span>სამუშაო საათები: ყოველდღე 09:00 - 21:00</span>
             </div>
           </div>
         </div>

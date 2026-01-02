@@ -39,7 +39,7 @@ export default function Header() {
               href="/"
               className="text-2xl font-bold text-[#1F2933] tracking-tight hover:text-[#2563EB] transition-colors"
             >
-              Renova
+              RenovaPro
             </Link>
 
             {/* Desktop Navigation */}
@@ -48,29 +48,27 @@ export default function Header() {
                 href="#services"
                 className="text-sm font-medium text-[#1F2933] hover:text-[#2563EB] transition-colors"
               >
-                მომსახურებები
+                სერვისები
               </Link>
               <Link
                 href="#projects"
                 className="text-sm font-medium text-[#1F2933] hover:text-[#2563EB] transition-colors"
               >
-                ჩვენი ნამუშევრები
+                პროექტები
               </Link>
               <Link
                 href="#process"
                 className="text-sm font-medium text-[#1F2933] hover:text-[#2563EB] transition-colors"
               >
-                როგორ ვმუშაობთ
+                სამუშაო პროცესი
               </Link>
               <Link
                 href="#reviews"
                 className="text-sm font-medium text-[#1F2933] hover:text-[#2563EB] transition-colors"
               >
-                მიმოხილვები
+                შეფასებები
               </Link>
             </nav>
-
-            {/* Phone + CTA (Desktop) */}
             <div className="hidden lg:flex items-center gap-4">
               {/* Phone Number - Always Visible */}
               <Link
@@ -130,28 +128,28 @@ export default function Header() {
             onClick={handleLinkClick}
             className="text-2xl font-semibold text-[#1F2933] hover:text-[#2563EB] transition-colors"
           >
-            მომსახურებები
+            სერვისები
           </Link>
           <Link
             href="#projects"
             onClick={handleLinkClick}
             className="text-2xl font-semibold text-[#1F2933] hover:text-[#2563EB] transition-colors"
           >
-            ჩვენი ნამუშევრები
+            პროექტები
           </Link>
           <Link
             href="#process"
             onClick={handleLinkClick}
             className="text-2xl font-semibold text-[#1F2933] hover:text-[#2563EB] transition-colors"
           >
-            როგორ ვმუშაობთ
+            სამუშაო პროცესი
           </Link>
           <Link
             href="#reviews"
             onClick={handleLinkClick}
             className="text-2xl font-semibold text-[#1F2933] hover:text-[#2563EB] transition-colors"
           >
-            მიმოხილვები
+            შეფასებები
           </Link>
 
           {/* Mobile Phone */}

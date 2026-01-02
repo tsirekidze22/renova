@@ -24,40 +24,32 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 0,
-      before:
-        "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
-      after:
-        "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop",
+      before: "/assets/images/before-1.jpg",
+      after: "/assets/images/after-1.jpg",
       location: "ვაკე, თბილისი",
-      size: "85 მ²",
+      size: "65 მ²",
       type: "სრული რემონტი",
     },
     {
       id: 1,
-      before:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800&h=600&fit=crop",
-      after:
-        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      before: "/assets/images/before-2.jpg",
+      after: "/assets/images/after-2.jpg",
       location: "საბურთალო, თბილისი",
       size: "120 მ²",
       type: "კოსმეტიკური რემონტი",
     },
     {
       id: 2,
-      before:
-        "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&h=600&fit=crop",
-      after:
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
+      before: "/assets/images/before-3.jpg",
+      after: "/assets/images/after-3.jpg",
       location: "ისანი, თბილისი",
       size: "95 მ²",
       type: "სრული რემონტი",
     },
     {
       id: 3,
-      before:
-        "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=600&fit=crop",
-      after:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+      before: "/assets/images/before-4.jpg",
+      after: "/assets/images/after-4.jpg",
       location: "დიღომი, თბილისი",
       size: "110 მ²",
       type: "ოფისის რემონტი",
@@ -73,18 +65,22 @@ const Projects: React.FC = () => {
 
   return (
     <section className="py-16 md:py-24 bg-[#F9FAFB]" id="projects">
+      {" "}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {" "}
+        {/* Section Header */}{" "}
         <div className="text-center mb-12 md:mb-16">
+          {" "}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2933] mb-4">
-            ჩვენი ნამუშევრები
-          </h2>
+            {" "}
+            პროექტები{" "}
+          </h2>{" "}
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-            დააკვირდით რეალურ შედეგებს — ყველა პროექტი დასრულებულია
-            ხელშეკრულების მიხედვით
-          </p>
+            {" "}
+            შეაფასეთ რეალური შედეგები: ყველა პროექტი დასრულებულია ხელშეკრულებით
+            გათვალისწინებულ ვადებში{" "}
+          </p>{" "}
         </div>
-
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {projects.map((project) => (
@@ -152,7 +148,7 @@ const Projects: React.FC = () => {
                     handleSliderChange(project.id, parseInt(e.target.value))
                   }
                   className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
-                  aria-label={`შედარების სლაიდერი ${project.type}`}
+                  aria-label={`შედარების სლაიდერი: ${project.type}`}
                 />
               </div>
 
@@ -177,27 +173,26 @@ const Projects: React.FC = () => {
 
                 <div className="pt-4 border-t-2 border-slate-100">
                   <p className="text-xs text-slate-500 mb-3">
-                    გადაიტარეთ სლაიდერი განსხვავების სანახავად
+                    გადააადგილეთ სლაიდერი სხვაობის სანახავად
                   </p>
                   <Link
                     href="#contact"
                     className="block w-full bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 text-center shadow-sm hover:shadow-md"
                   >
-                    მსგავსი პროექტის შეკვეთა
+                    ანალოგიური პროექტის შეკვეთა
                   </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
         {/* Bottom CTA */}
         <div className="mt-16 text-center bg-white rounded-2xl p-8 md:p-12 border-2 border-slate-200 shadow-sm">
           <h3 className="text-2xl md:text-3xl font-bold text-[#1F2933] mb-4">
-            გსურთ ასეთი შედეგი თქვენი ბინისთვის?
+            გსურთ ასეთივე შედეგი თქვენს ბინაში?
           </h3>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            მიიღეთ უფასო კონსულტაცია და დეტალური შეთავაზება 24 საათში
+            გაიარეთ უფასო კონსულტაცია და მიიღეთ დეტალური შეთავაზება 24 საათში
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -205,7 +200,7 @@ const Projects: React.FC = () => {
               className="inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg shadow-lg hover:shadow-xl"
             >
               <Phone className="w-5 h-5" />
-              <span>დარეკვა</span>
+              <span>დაგვიკავშირდით</span>
             </Link>
             <Link
               href="#contact"

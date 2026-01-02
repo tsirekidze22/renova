@@ -17,7 +17,7 @@ export default function Testimonials() {
       location: "ვაკე",
       projectType: "სრული რემონტი",
       review:
-        "რემონტი ჩააბარეს ზუსტად დროზე. ყველაფერი შეთანხმების მიხედვით შესრულდა. ფასი არ შეცვლილა, ხარისხი შესანიშნავია. ძალიან კმაყოფილი ვარ!",
+        "რემონტი ჩამაბარეს ზუსტად დროზე. ყველაფერი შეთანხმების მიხედვით შესრულდა. ბიუჯეტი პროცესში არ შეცვლილა და ხარისხიც შესანიშნავია. ძალიან კმაყოფილი ვარ!",
       rating: 5,
     },
     {
@@ -26,7 +26,7 @@ export default function Testimonials() {
       location: "საბურთალო",
       projectType: "კოსმეტიკური რემონტი",
       review:
-        "პროფესიონალები თავიანთ საქმეში. მუშები პუნქტუალურები არიან, ყველაფერი სუფთად აქვთ გაკეთებული. გულწრფელად ვურჩევ ყველას!",
+        "თავისი საქმის პროფესიონალები არიან. ხელოსნები პუნქტუალურები იყვნენ და ყველაფერი სუფთად ჩამაბარეს. გულწრფელად ვუწევ რეკომენდაციას",
       rating: 5,
     },
     {
@@ -35,7 +35,7 @@ export default function Testimonials() {
       location: "ისანი",
       projectType: "ოფისის რემონტი",
       review:
-        "ოფისის რემონტი 2 კვირაში დაასრულეს. ბიზნესის გაჩერება მინიმალური იყო. ფიქსირებული ფასი და ხარისხიანი სამუშაო. რეკომენდაცია 100%!",
+        "ოფისის რემონტი სულ რაღაც 2 კვირაში დაასრულეს. ბიზნესის შეფერხება მინიმალური იყო. ფიქსირებული ფასი და ხარისხიანი სამუშაო - 100%-იანი რეკომენდაცია",
       rating: 5,
     },
   ];
@@ -57,17 +57,22 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 lg:py-28 bg-[#F9FAFB] scroll-mt-20" id="reviews">
+      {" "}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {" "}
+        {/* Section Header */}{" "}
         <div className="text-center mb-16 lg:mb-20">
+          {" "}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1F2933] mb-4">
-            რას ამბობენ ჩვენი კლიენტები
-          </h2>
+            {" "}
+            მომხმარებელთა შეფასებები{" "}
+          </h2>{" "}
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
-            რეალური შეფასებები დასრულებული პროექტებიდან
-          </p>
+            {" "}
+            რეალური ისტორიები და გამოხმაურებები ჩვენს მიერ დასრულებული
+            პროექტებიდან{" "}
+          </p>{" "}
         </div>
-
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
@@ -81,7 +86,7 @@ export default function Testimonials() {
               </div>
 
               {/* Review Text */}
-              <blockquote className="text-slate-700 text-base mb-8 leading-relaxed">
+              <blockquote className="text-slate-700 text-base mb-8 leading-relaxed italic">
                 "{testimonial.review}"
               </blockquote>
 
@@ -114,7 +119,10 @@ export default function Testimonials() {
 
                   {/* Verified Badge */}
                   <div className="flex-shrink-0 ml-4">
-                    <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                    <div
+                      className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center"
+                      title="ვერიფიცირებული"
+                    >
                       <svg
                         className="w-7 h-7 text-green-600"
                         fill="currentColor"
@@ -133,10 +141,9 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-
         {/* Trust Message */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-lg border-2 border-slate-200">
+          <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-lg border-2 border-slate-200 shadow-sm">
             <svg
               className="w-8 h-8 text-[#2563EB]"
               fill="currentColor"
@@ -145,8 +152,8 @@ export default function Testimonials() {
               <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>
             <p className="text-slate-700 text-lg">
-              <span className="font-bold text-[#1F2933]">200+</span> კმაყოფილი
-              კლიენტი თბილისსა და მის გარეუბანში
+              <span className="font-bold text-[#1F2933]">200-ზე მეტი</span>{" "}
+              კმაყოფილი კლიენტი თბილისსა და მის შემოგარენში
             </p>
           </div>
         </div>

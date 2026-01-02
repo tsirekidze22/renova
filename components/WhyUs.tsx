@@ -6,41 +6,49 @@ export default function WhyUs() {
   const trustPoints = [
     {
       icon: Award,
-      title: "10+ წლიანი გამოცდილება",
-      description: "ასობით პროექტი და კმაყოფილი კლიენტები თბილისში",
+      title: "10-წლიანი გამოცდილება",
+      description:
+        "ასობით წარმატებული პროექტი და კმაყოფილი მომხმარებელი მთელ თბილისში",
     },
     {
       icon: DollarSign,
-      title: "ფიქსირებული ფასები",
-      description: "არანაირი დამალული ხარჯი — რაზეც შევთანხმდით, იმას იხდით",
+      title: "ფიქსირებული ფასი",
+      description:
+        "არანაირი გაუთვალისწინებელი ხარჯი: იხდით ზუსტად იმდენს, რაზეც შევთანხმდით",
     },
     {
       icon: Sparkles,
       title: "ხარისხიანი მასალები",
-      description: "მხოლოდ გამოცდილი მასალები და პროფესიონალი სპეციალისტები",
+      description:
+        "ვიყენებთ მხოლოდ ნაცად მასალებს და ვმუშაობთ პროფესიონალ სპეციალისტებთან",
     },
     {
       icon: Clock,
       title: "ზუსტი ვადები",
-      description: "ვიწყებთ და ვასრულებთ დროზე — ხელშეკრულებით გარანტირებული",
+      description:
+        "სამუშაოებს ვასრულებთ დროულად, რაც გამყარებულია ოფიციალური ხელშეკრულებით",
     },
   ];
 
   return (
     <section id="about" className="py-20 lg:py-24 bg-white scroll-mt-20">
+      {" "}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {" "}
+        {/* Section Header */}{" "}
         <div className="text-center mb-12 lg:mb-16">
+          {" "}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1F2933] mb-6">
-            რატომ ჩვენ?
-          </h2>
+            {" "}
+            რატომ ჩვენ?{" "}
+          </h2>{" "}
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            ვართ პროფესიონალი გუნდი, რომელიც აკეთებს ხარისხიან რემონტს
-            შეთანხმებულ ვადაში და ფიქსირებულ ფასად. არანაირი სიურპრიზი — მხოლოდ
-            გამჭვირვალობა და გარანტირებული შედეგი.
-          </p>
+            {" "}
+            ჩვენი გუნდი უზრუნველყოფს მაღალი ხარისხის რემონტს წინასწარ
+            განსაზღვრულ ვადებსა და ბიუჯეტში. ჩვენთან არ არის მოულოდნელი
+            სიურპრიზები, მხოლოდ გამჭვირვალე პროცესი და გარანტირებული შედეგი.{" "}
+          </p>{" "}
         </div>
-
         {/* Trust Points Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {trustPoints.map((point, index) => {
@@ -70,7 +78,6 @@ export default function WhyUs() {
             );
           })}
         </div>
-
         {/* Bottom Stats Bar */}
         <div className="mt-16 pt-12 border-t-2 border-slate-200">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -87,7 +94,7 @@ export default function WhyUs() {
                 200+
               </div>
               <div className="text-sm lg:text-base text-slate-600 font-medium">
-                დასრულებული პროექტი
+                პროექტი
               </div>
             </div>
             <div>
@@ -95,7 +102,7 @@ export default function WhyUs() {
                 100%
               </div>
               <div className="text-sm lg:text-base text-slate-600 font-medium">
-                ხელშეკრულებით
+                გარანტია
               </div>
             </div>
             <div>

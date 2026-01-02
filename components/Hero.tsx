@@ -12,14 +12,14 @@ export default function Hero() {
           {/* Left: Content */}
           <div className="space-y-8 lg:space-y-10">
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#1F2933] leading-tight">
-              საიმედო რემონტი თბილისში — ზუსტი ვადებით და გარანტიით
+            <h1 className="text-center md:text-start text-3xl sm:text-5xl font-bold text-[#1F2933] leading-tight">
+              ხარისხიანი რემონტი თბილისში: ვადების და ხარისხის გარანტიით{" "}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
+            <p className="text-center md:text-start text-lg sm:text-xl text-slate-600 leading-relaxed">
               ბინების, ოფისებისა და კომერციული ფართების სრული სარემონტო
-              მომსახურება
+              მომსახურება ერთ სივრცეში
             </p>
 
             {/* CTA Buttons */}
@@ -37,7 +37,7 @@ export default function Hero() {
                 href="#projects"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1F2933] text-lg font-bold rounded-lg border-2 border-[#1F2933] hover:bg-[#1F2933] hover:text-white transition-colors"
               >
-                ჩვენი ნამუშევრები
+                პროექტების ნახვა
               </Link>
             </div>
 
@@ -57,21 +57,24 @@ export default function Hero() {
               </div>
               <div className="text-center sm:text-left space-y-1">
                 <CheckCircle2 className="w-8 h-8 text-[#2563EB] mx-auto sm:mx-0" />
-                <div className="text-sm text-slate-600">ხელშეკრულებით</div>
+                <div className="text-sm text-slate-600">
+                  ოფიციალური ხელშეკრულება
+                </div>
               </div>
               <div className="text-center sm:text-left space-y-1">
                 <CheckCircle2 className="w-8 h-8 text-[#2563EB] mx-auto sm:mx-0" />
-                <div className="text-sm text-slate-600">ფიქსირებული ფასები</div>
+                <div className="text-sm text-slate-600">
+                  ფიქსირებული ბიუჯეტი
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right: Image */}
-          <div className="relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            {/* Replace this div with actual image */}
+          <div className="hidden md:block relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB] to-[#1F2933]">
               <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop"
+                src="/assets/images/hero-renova.jpeg"
                 alt="პროფესიონალური რემონტი თბილისში"
                 fill
                 className="object-cover opacity-80"
@@ -88,7 +91,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-[#2563EB]" />
                 <span className="text-sm font-bold text-[#1F2933]">
-                  საუკეთესო ხარისხი
+                  უმაღლესი ხარისხი
                 </span>
               </div>
             </div>
