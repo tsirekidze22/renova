@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Noto_Sans_Georgian } from "next/font/google"; // Noto Sans Georgian
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const notoSans = Noto_Sans_Georgian({
@@ -20,7 +21,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ka" className={notoSans.className}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
