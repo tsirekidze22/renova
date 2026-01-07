@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
+import {
+  SimpleReveal,
+  SimpleStagger,
+  SimpleItem,
+} from "./reusable/SimpleReveal";
 
 interface Project {
   id: number;
@@ -27,32 +32,32 @@ const Projects: React.FC = () => {
       before: "/assets/images/before-1.jpg",
       after: "/assets/images/after-1.jpg",
       location: "ვაკე, თბილისი",
-      size: "65 მ²",
-      type: "სრული რემონტი",
+      size: "115 მ²",
+      type: "კერძო სახლის რემონტი",
     },
     {
       id: 1,
-      before: "/assets/images/before-2.jpg",
-      after: "/assets/images/after-2.jpg",
+      before: "/assets/images/office-before.jpeg",
+      after: "/assets/images/office-after.jpg",
       location: "საბურთალო, თბილისი",
-      size: "120 მ²",
-      type: "კოსმეტიკური რემონტი",
+      size: "220 მ²",
+      type: "ოფისის რემონტი",
     },
     {
       id: 2,
       before: "/assets/images/before-3.jpg",
       after: "/assets/images/after-3.jpg",
       location: "ისანი, თბილისი",
-      size: "95 მ²",
-      type: "სრული რემონტი",
+      size: "65 მ²",
+      type: "ბინის სრული რემონტი",
     },
     {
       id: 3,
       before: "/assets/images/before-4.jpg",
       after: "/assets/images/after-4.jpg",
       location: "დიღომი, თბილისი",
-      size: "110 მ²",
-      type: "ოფისის რემონტი",
+      size: "20 მ²",
+      type: "სამზარეულოს რემონტი",
     },
   ];
 
@@ -65,129 +70,131 @@ const Projects: React.FC = () => {
 
   return (
     <section className="py-16 md:py-24 bg-[#F9FAFB]" id="projects">
-      {" "}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {" "}
-        {/* Section Header */}{" "}
-        <div className="text-center mb-12 md:mb-16">
-          {" "}
+        {/* Section Header - Simple fade-in */}
+        <SimpleReveal className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2933] mb-4">
-            {" "}
-            პროექტები{" "}
-          </h2>{" "}
+            პროექტები
+          </h2>
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-            {" "}
-            შეაფასეთ რეალური შედეგები: ყველა პროექტი დასრულებულია ხელშეკრულებით
-            გათვალისწინებულ ვადებში{" "}
-          </p>{" "}
-        </div>
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+            შეაფასეთ შედეგები: ყველა პროექტი დასრულებულია ხელშეკრულებით
+            გათვალისწინებულ ვადებში.
+          </p>
+        </SimpleReveal>
+
+        {/* Projects Grid - Minimal stagger */}
+        <SimpleStagger
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
+          staggerDelay={0.1}
+        >
           {projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white rounded-xl overflow-hidden border-2 border-slate-200 hover:border-[#2563EB] hover:shadow-xl transition-all duration-300"
-            >
-              {/* Before/After Slider */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
-                {/* After Image (Background) */}
-                <div className="absolute inset-0">
-                  <Image
-                    src={project.after}
-                    alt="შემდეგ"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-[#2563EB] text-white px-3 py-1.5 rounded-lg text-xs font-bold z-10 shadow-lg">
-                    შემდეგ
-                  </div>
-                </div>
-
-                {/* Before Image (Overlay with clip) */}
-                <div
-                  className="absolute inset-0 z-[5]"
-                  style={{
-                    clipPath: `inset(0 ${
-                      100 - activeSliders[project.id]
-                    }% 0 0)`,
-                  }}
-                >
-                  <Image
-                    src={project.before}
-                    alt="მანამდე"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute top-4 left-4 bg-[#1F2933] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg">
-                    მანამდე
-                  </div>
-                </div>
-
-                {/* Slider Handle */}
-                <div
-                  className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-10 shadow-lg"
-                  style={{ left: `${activeSliders[project.id]}%` }}
-                >
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center border-2 border-slate-200">
-                    <div className="flex gap-0.5">
-                      <div className="w-0.5 h-5 bg-[#2563EB] rounded-full"></div>
-                      <div className="w-0.5 h-5 bg-[#2563EB] rounded-full"></div>
+            <SimpleItem key={project.id}>
+              <div className="bg-white rounded-xl overflow-hidden border-2 border-slate-200 hover:border-[#2563EB] hover:shadow-xl transition-all duration-300">
+                {/* Before/After Slider */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                  {/* After Image (Background) */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={project.after}
+                      alt="შემდეგ"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute top-4 right-4 bg-[#2563EB] text-white px-3 py-1.5 rounded-lg text-xs font-bold z-10 shadow-lg">
+                      შემდეგ
                     </div>
                   </div>
-                </div>
 
-                {/* Invisible Slider Input */}
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={activeSliders[project.id]}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    handleSliderChange(project.id, parseInt(e.target.value))
-                  }
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
-                  aria-label={`შედარების სლაიდერი: ${project.type}`}
-                />
-              </div>
-
-              {/* Project Info */}
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1F2933] mb-2">
-                      {project.type}
-                    </h3>
-                    <p className="text-slate-600 flex items-center gap-2 text-sm">
-                      <MapPin className="w-4 h-4 text-[#2563EB]" />
-                      <span>{project.location}</span>
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-[#2563EB]">
-                      {project.size}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t-2 border-slate-100">
-                  <p className="text-xs text-slate-500 mb-3">
-                    გადააადგილეთ სლაიდერი სხვაობის სანახავად
-                  </p>
-                  <Link
-                    href="#contact"
-                    className="block w-full bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 text-center shadow-sm hover:shadow-md"
+                  {/* Before Image (Overlay with clip) */}
+                  <div
+                    className="absolute inset-0 z-[5]"
+                    style={{
+                      clipPath: `inset(0 ${
+                        100 - activeSliders[project.id]
+                      }% 0 0)`,
+                    }}
                   >
-                    ანალოგიური პროექტის შეკვეთა
-                  </Link>
+                    <Image
+                      src={project.before}
+                      alt="მანამდე"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute top-4 left-4 bg-[#1F2933] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg">
+                      მანამდე
+                    </div>
+                  </div>
+
+                  {/* Slider Handle */}
+                  <div
+                    className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-10 shadow-lg"
+                    style={{ left: `${activeSliders[project.id]}%` }}
+                  >
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center border-2 border-slate-200">
+                      <div className="flex gap-0.5">
+                        <div className="w-0.5 h-5 bg-[#2563EB] rounded-full"></div>
+                        <div className="w-0.5 h-5 bg-[#2563EB] rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Invisible Slider Input */}
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={activeSliders[project.id]}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      handleSliderChange(project.id, parseInt(e.target.value))
+                    }
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
+                    aria-label={`შედარების სლაიდერი: ${project.type}`}
+                  />
+                </div>
+
+                {/* Project Info */}
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-[#1F2933] mb-2">
+                        {project.type}
+                      </h3>
+                      <p className="text-slate-600 flex items-center gap-2 text-sm">
+                        <MapPin className="w-4 h-4 text-[#2563EB]" />
+                        <span>{project.location}</span>
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-[#2563EB]">
+                        {project.size}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t-2 border-slate-100">
+                    <p className="text-xs text-slate-500 mb-3">
+                      გადააადგილეთ სლაიდერი სხვაობის სანახავად
+                    </p>
+                    <Link
+                      href="#contact"
+                      className="block w-full bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 text-center shadow-sm hover:shadow-md"
+                    >
+                      ანალოგიური პროექტის შეკვეთა
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </SimpleItem>
           ))}
-        </div>
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center bg-white rounded-2xl p-8 md:p-12 border-2 border-slate-200 shadow-sm">
+        </SimpleStagger>
+
+        {/* Bottom CTA - Slight delay to appear after projects */}
+        <SimpleReveal
+          className="mt-16 text-center bg-white rounded-2xl p-8 md:p-12 border-2 border-slate-200 shadow-sm"
+          delay={0.3}
+        >
           <h3 className="text-2xl md:text-3xl font-bold text-[#1F2933] mb-4">
             გსურთ ასეთივე შედეგი თქვენს ბინაში?
           </h3>
@@ -209,7 +216,7 @@ const Projects: React.FC = () => {
               <span>უფასო კონსულტაცია</span>
             </Link>
           </div>
-        </div>
+        </SimpleReveal>
       </div>
     </section>
   );

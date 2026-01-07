@@ -9,6 +9,11 @@ import {
   Palette,
   Building2,
 } from "lucide-react";
+import {
+  SimpleReveal,
+  SimpleStagger,
+  SimpleItem,
+} from "./reusable/SimpleReveal";
 
 export default function Services() {
   const services = [
@@ -52,51 +57,50 @@ export default function Services() {
 
   return (
     <section id="services" className="py-20 lg:py-24 bg-[#F9FAFB] scroll-mt-20">
-      {" "}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {" "}
-        {/* Section Header */}{" "}
-        <div className="text-center mb-16 lg:mb-20">
-          {" "}
+        {/* Section Header - Simple fade-in */}
+        <SimpleReveal className="text-center mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1F2933] mb-4">
-            {" "}
-            სერვისები{" "}
-          </h2>{" "}
+            სერვისები
+          </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
-            {" "}
             გთავაზობთ სარემონტო სამუშაოების სრულ სპექტრს: ბინების, სახლებისა და
-            ბიზნეს ფართებისთვის{" "}
-          </p>{" "}
-        </div>
-        {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            ბიზნეს ფართებისთვის
+          </p>
+        </SimpleReveal>
+
+        {/* Services Grid - Minimal stagger (barely noticeable) */}
+        <SimpleStagger
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          staggerDelay={0.08}
+        >
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div
-                key={index}
-                className="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-[#2563EB] hover:shadow-lg transition-all duration-300"
-              >
-                {/* Icon */}
-                <div className="w-14 h-14 bg-[#2563EB]/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#2563EB] transition-colors duration-300">
-                  <Icon className="w-7 h-7 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+              <SimpleItem key={index}>
+                <div className="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-[#2563EB] hover:shadow-lg transition-all duration-300">
+                  {/* Icon */}
+                  <div className="w-14 h-14 bg-[#2563EB]/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#2563EB] transition-colors duration-300">
+                    <Icon className="w-7 h-7 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-[#1F2933] mb-4">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-[#1F2933] mb-4">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-base text-slate-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
+              </SimpleItem>
             );
           })}
-        </div>
-        {/* CTA Below Services */}
-        <div className="text-center mt-16">
+        </SimpleStagger>
+
+        {/* CTA Below Services - Slight delay */}
+        <SimpleReveal className="text-center mt-16" delay={0.2}>
           <p className="text-lg text-slate-700 mb-6">
             ვერ იპოვეთ სასურველი მომსახურება? დაგვიკავშირდით და ერთად განვიხილოთ
             თქვენი პროექტი
@@ -107,7 +111,7 @@ export default function Services() {
           >
             გაიარეთ კონსულტაცია
           </Link>
-        </div>
+        </SimpleReveal>
       </div>
     </section>
   );

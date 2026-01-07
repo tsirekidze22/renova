@@ -1,5 +1,8 @@
 "use client";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 interface Testimonial {
   id: number;
   name: string;
@@ -55,29 +58,51 @@ export default function Testimonials() {
     ));
   };
 
+  // Refs for scroll animations
+  const headerRef = useRef(null);
+  const cardsRef = useRef(null);
+  const trustRef = useRef(null);
+
+  const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
+  const cardsInView = useInView(cardsRef, { once: true, margin: "-80px" });
+  const trustInView = useInView(trustRef, { once: true, margin: "-100px" });
+
+  const simpleEasing: [number, number, number, number] = [0.4, 0, 0.2, 1];
+
   return (
     <section className="py-20 lg:py-28 bg-[#F9FAFB] scroll-mt-20" id="reviews">
-      {" "}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {" "}
-        {/* Section Header */}{" "}
-        <div className="text-center mb-16 lg:mb-20">
-          {" "}
+        {/* Section Header - Simple fade + minimal slide */}
+        <motion.div
+          ref={headerRef}
+          initial={{ opacity: 0, y: 15 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+          transition={{ duration: 0.6, ease: simpleEasing }}
+          className="text-center mb-16 lg:mb-20"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1F2933] mb-4">
-            {" "}
-            მომხმარებელთა შეფასებები{" "}
-          </h2>{" "}
+            მომხმარებელთა შეფასებები
+          </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
-            {" "}
             რეალური ისტორიები და გამოხმაურებები ჩვენს მიერ დასრულებული
-            პროექტებიდან{" "}
-          </p>{" "}
-        </div>
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
+            პროექტებიდან
+          </p>
+        </motion.div>
+
+        {/* Testimonials Grid - Minimal stagger */}
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
               key={testimonial.id}
+              initial={{ opacity: 0, y: 15 }}
+              animate={
+                cardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }
+              }
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08, // Subtle stagger: 80ms between cards
+                ease: simpleEasing,
+              }}
               className="bg-white rounded-xl p-8 border-2 border-slate-200 hover:border-[#2563EB] hover:shadow-lg transition-all duration-300"
             >
               {/* Rating Stars */}
@@ -138,11 +163,18 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        {/* Trust Message */}
-        <div className="mt-16 text-center">
+
+        {/* Trust Message - Simple fade in */}
+        <motion.div
+          ref={trustRef}
+          initial={{ opacity: 0, y: 15 }}
+          animate={trustInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+          transition={{ duration: 0.6, ease: simpleEasing }}
+          className="mt-16 text-center"
+        >
           <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-lg border-2 border-slate-200 shadow-sm">
             <svg
               className="w-8 h-8 text-[#2563EB]"
@@ -156,7 +188,7 @@ export default function Testimonials() {
               კმაყოფილი კლიენტი თბილისსა და მის შემოგარენში
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
