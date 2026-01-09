@@ -32,6 +32,10 @@ export default function Header() {
           isScrolled ? "shadow-md" : "shadow-sm"
         }`}
       >
+        <div className="bg-stone-900 py-3 text-center text-white text-xs py-3 px-4">
+          ეს ვებ-გვერდი წარმოადგენს დემო ვერსიას - შესაძლებელია მისი სრულად
+          მორგება თქვენს ბიზნესზე.
+        </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
