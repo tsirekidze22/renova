@@ -21,8 +21,8 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
-  const phoneNumber = "+995 555 123 456";
-  const phoneNumberClean = "995555123456";
+  const phoneNumber = "+995 555 799 369";
+  const phoneNumberClean = "995555799369";
   const whatsappLink = `https://wa.me/${phoneNumberClean}`;
 
   return (

@@ -3,9 +3,9 @@
 import Link from "next/link";
 
 export default function Footer() {
-  const phoneNumber = "+995 555 123 456";
-  const phoneNumberClean = "+995555123456";
-  const whatsappNumber = "995555123456";
+  const phoneNumber = "+995 555 799 369";
+  const phoneNumberClean = "+995555799369";
+  const whatsappNumber = "995555799369";
   const email = "info@renovapro.ge";
 
   const services = [

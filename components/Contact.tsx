@@ -3,9 +3,9 @@
 import Link from "next/link";
 
 export default function Contact() {
-  const phoneNumber = "+995 555 123 456";
-  const phoneNumberClean = "+995555123456";
-  const whatsappNumber = "995555123456";
+  const phoneNumber = "+995 555 799 369";
+  const phoneNumberClean = "+995555799369";
+  const whatsappNumber = "995555799369";
 
   return (
     <section className="py-20 lg:py-28 bg-[#1F2933] scroll-mt-20" id="contact">

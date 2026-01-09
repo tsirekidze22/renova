@@ -203,7 +203,7 @@ const Projects: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="tel:+995555123456"
+              href="tel:+995555799369"
               className="inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg shadow-lg hover:shadow-xl"
             >
               <Phone className="w-5 h-5" />
