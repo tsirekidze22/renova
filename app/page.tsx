@@ -12,7 +12,10 @@ import Testimonials from "@/components/Testimonials";
 export default function Home() {
   return (
     <>
-     
+      <div className="bg-stone-900 py-3 text-center text-white text-xs py-3 px-4">
+        ეს ვებ-გვერდი წარმოადგენს დემო ვერსიას - შესაძლებელია მისი სრულად
+        მორგება თქვენს ბიზნესზე.
+      </div>
       <Header />
       <main>
         <Hero />
