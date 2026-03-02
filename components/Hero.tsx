@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen bg-white pt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-5rem)] py-12 lg:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Content - Simple fade-in with minimal slide */}
           <div className="space-y-8 lg:space-y-10">
             {/* Main Heading - Fade in first */}
